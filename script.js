@@ -35,7 +35,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
     if (name && email && message) {
         // Send form data to EmailJS
-        emailjs.send("service_5pzraet","template_iekxixi", this);
+        emailjs.send("service_5pzraet","template_iekxixi", this)
            .then(function(response) {
                 statusMessage.textContent = "✅ Message sent successfully! Thank you 🙌";
                 statusMessage.style.color = "green";
