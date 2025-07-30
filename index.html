@@ -172,14 +172,31 @@
 }
         
         /* Hero Section */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            text-align: center;
-            padding-top: 80px;
-        }
+         #hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(-45deg,
+        var(--primary),
+        var(--secondary),
+        var(--gray));
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    text-align: center;
+    padding-top: 80px;
+    color: white;
+}
+        @keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
         
         .hero-content {
             max-width: 800px;
@@ -222,9 +239,24 @@
         
         /* Skills Section */
         #skills {
-            background: var(--light);
+            background: linear-gradient(-45deg,
+        var(--primary),
+        var(--secondary),
+        var(--gray));
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
         }
-        
+        @keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -297,9 +329,24 @@
         
         /* Resume Section */
         #resume {
-            background: var(--light);
-            text-align: center;
+            background: linear-gradient(-45deg,
+        var(--primary),
+        var(--secondary),
+        var(--gray));
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
         }
+        @keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
         
         /* Contact Section */
         #contact {
@@ -338,7 +385,26 @@
             min-height: 150px;
             resize: vertical;
         }
-        
+         button[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
         /* Footer */
         footer {
             background: var(--dark);
@@ -558,7 +624,7 @@ footer .social-links i:hover {
             <div class="hero-content">
                 <img src="siphokuhle.png" alt="Siphokuhle Kambi" class="profile-pic">
                 <h1>Siphokuhle Kambi</h1>
-                <p>Aspiring IT professional</p>
+                <p>Aspiring IT professional | Cloud computing | Artificial Intelligence </p>
                 <a href="#projects" class="btn">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
