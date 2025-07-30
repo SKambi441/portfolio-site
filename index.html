@@ -115,6 +115,7 @@
              display: flex;
              align-items: center;
              gap: 10px;
+            flex-shrink: 0;
 }
 
         .nav-profile {
@@ -135,20 +136,11 @@
         .nav-links {
             display: flex;
             list-style: none;
+            margin-left: auto;
         }
         
         .nav-links li {
             margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--dark);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
         }
         
         .hamburger {
@@ -156,20 +148,22 @@
             cursor: pointer;
         }
         .nav-links a {
-            background-color: #007bff; /* Bright blue */
-            color: white;
-            padding: 8px 16px;
-            margin: 5px;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s ease;
-            font-weight: 500;
-            display: inline-block;
-        }
+    background-color: var(--primary); /* Bright blue from palette */
+    color: white;
+    padding: 8px 16px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(79, 70, 229, 0.2); /* Soft glow */
+}
 
-        .nav-links a:hover {
-              background-color: #0056b3; /* Darker blue on hover */
-        }
+.nav-links a:hover {
+    background-color: #4338ca; /* Hover shade of primary */
+    transform: scale(1.05);
+}
         
         /* Hero Section */
         #hero {
@@ -683,7 +677,7 @@ Since then, I've been motivated to keep learning and to explore this book called
     <label for="message">Message</label>
     <textarea id="message" name="message" required></textarea>
   </div>
-
+<p id="form-status-message" class="form-message"></p>
   <button type="submit">Send</button>
 </form>
 
