@@ -32,10 +32,15 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
     const statusMessage = document.getElementById('form-status-message');
-
-    if (name && email && message) {
+    
+ if (name && email && message) {
+    const templateParams = {
+            from_name: name,
+            email: email,
+            message: message
+    };
         // Send form data to EmailJS
-        emailjs.send("service_5pzraet","template_iekxixi", this)
+        emailjs.send("service_5pzraet","template_iekxixi", templateParams)
            .then(function(response) {
                 statusMessage.textContent = "✅ Message sent successfully! Thank you 🙌";
                 statusMessage.style.color = "green";
