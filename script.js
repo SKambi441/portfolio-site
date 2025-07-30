@@ -20,19 +20,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form submission
+// Initialize EmailJS
+emailjs.init("0hrpG0PBH0S6zY91i"); // 🔑 Replace with your actual public key
+
+// Handle form submission
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
+
+    // Optional: Basic form validation
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const statusMessage = document.getElementById('form-status-message');
+
     if (name && email && message) {
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
+        // Send form data to EmailJS
+        emailjs.send("service_5pzraet","template_iekxixi" this);
+           .then(function(response) {
+                statusMessage.textContent = "✅ Message sent successfully! Thank you 🙌";
+                statusMessage.style.color = "green";
+                e.target.reset();
+            }, function(error) {
+                statusMessage.textContent = "❌ Failed to send message. Please try again.";
+                statusMessage.style.color = "red";
+                console.error("FAILED...", error);
+            });
     } else {
-        alert('Please fill in all fields.');
+        statusMessage.textContent = "⚠️ Please fill in all fields.";
+        statusMessage.style.color = "orange";
     }
 });
 
