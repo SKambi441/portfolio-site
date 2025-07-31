@@ -292,12 +292,12 @@
             background: white;
         }
         
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
+       .projects-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forces 4 columns */
+    gap: 30px;
+    margin-top: 50px;
+}
         
         .project-card {
             background: var(--light);
